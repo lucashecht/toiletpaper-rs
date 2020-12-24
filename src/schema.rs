@@ -3,6 +3,6 @@ table! {
         id -> Unsigned<Bigint>,
         product_type -> Varchar,
         time -> Datetime,
-        stock -> Integer,
+        amount -> Integer,
     }
 }

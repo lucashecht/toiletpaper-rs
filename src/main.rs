@@ -1,3 +1,4 @@
+use toiletpaper::{establish_connection, save_stock};
 use serde::Deserialize;
 use std::collections::HashMap;
 
@@ -41,5 +42,9 @@ async fn main() -> Result<(), reqwest::Error> {
     let stocklevel = sum_stocklevels(res.storeAvailabilities);
 
     println!("Stock level: {}", stocklevel);
+
+    let connection = establish_connection();
+    let product_type = String::from("toiletpaper");
+    save_stock(&connection, &product_type, &stocklevel);
     Ok(())
 }
