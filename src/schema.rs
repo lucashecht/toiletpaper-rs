@@ -4,5 +4,6 @@ table! {
         product_type -> Varchar,
         time -> Datetime,
         amount -> Integer,
+        store_number -> Integer,
     }
 }

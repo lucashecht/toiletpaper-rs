@@ -18,11 +18,11 @@ pub fn establish_connection() -> MysqlConnection {
     MysqlConnection::establish(&database_url).expect(&format!("Error connecting to {}", database_url))
 }
 
-pub fn save_stock<'a>(conn: &MysqlConnection, product_type: &'a String, amount: &'a i32) -> usize{
+pub fn save_stock<'a>(conn: &MysqlConnection, product_type: &'a String, amount: &'a i32, store_number: &'a i32) -> usize{
     use schema::stock;
 
     let time = Local::now().naive_local();
-    let new_stock = NewStock { product_type, time: &time, amount };
+    let new_stock = NewStock { product_type, time: &time, amount, store_number};
 
     diesel::insert_into(stock::table).values(&new_stock).execute(conn).expect("Error saving stock")
 }

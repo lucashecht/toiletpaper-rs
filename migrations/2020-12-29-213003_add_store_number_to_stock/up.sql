@@ -1,0 +1,1 @@
+ALTER TABLE stock ADD COLUMN store_number INTEGER NOT NULL
