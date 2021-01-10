@@ -13,3 +13,4 @@ serde = { version = "1.0", features = ["derive"] }
 diesel = { version = "1.4.4", features = ["mysql", "chrono"] }
 dotenv = "0.15.0"
 chrono = "0.4.19"
+rocket = { version = "0.5.0-dev", git = "https://github.com/SergioBenitez/Rocket" } # for async routes
